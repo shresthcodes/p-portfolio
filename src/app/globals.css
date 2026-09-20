@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#121212] text-white;
+    background-color: #121212;
+    overflow-x: hidden;
+  }
+
+  @media (pointer: fine) {
+    body, a, button, input, textarea, [class*="cursor-pointer"] {
+      cursor: none !important;
+    }
+  }
+}
+
+@layer utilities {
+  .glassmorphism {
+    @apply bg-black/20 backdrop-blur-md border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)];
+  }
+
+  @keyframes shimmer {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+  }
+  
+  .animate-shimmer {
+    animation: shimmer 1.5s infinite ease-in-out;
+  }
+}
